@@ -1,4 +1,4 @@
-const heartNum = 0;
+let heartNum = 0;
 const messageNum = 0;
 
 // Array of messages
@@ -97,16 +97,24 @@ function displayRandomMessage() {
     
     // Find the HTML element by ID and set its text content to the random message
     const messageElement = document.getElementById('message'); 
-    const NewLove = randomlove +" \n "+ messageElement.textContent;
+    const NewLove = messageElement.textContent +" \n "+ randomlove;
     messageElement.textContent = NewLove;
 }
 
-function addHeart(){
-    heartNum + 1;
-    const heartCount = document.getElementById('hearts'); 
-    const loveCount = "❤️" + heartCount.textContent;
-    heartCount.textContent = loveCount;
-    if(heartNum < 10){
-        loveCount = heartCount.textContent + " \n ";
+function addHeart() {
+    if (heartNum < 27) { // Only add a heart if the count is less than 27
+        heartNum += 1; // Increment the heart count
+
+        const heartCount = document.getElementById('hearts'); 
+        let loveCount = heartCount.textContent + "❤️"; // Append a heart to the existing content
+
+        heartCount.textContent = loveCount;
+
+        // Optionally, you can add some extra spacing/new lines if heartNum < 10
+        if (heartNum < 10) {
+            loveCount = heartCount.textContent + " \n ";
+        }
+    } else {
+        console.log("Maximum number of hearts reached!"); // Optional: Log message when limit is reached
     }
 }
