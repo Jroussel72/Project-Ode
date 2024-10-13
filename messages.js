@@ -102,19 +102,15 @@ function displayRandomMessage() {
 }
 
 function addHeart() {
-    if (heartNum < 27) { // Only add a heart if the count is less than 27
-        heartNum += 1; // Increment the heart count
+    heartNum += 1; // Increment the heart count
 
-        const heartCount = document.getElementById('hearts'); 
-        let loveCount = heartCount.textContent + "❤️"; // Append a heart to the existing content
+    const heartCount = document.getElementById('hearts'); 
+    let loveCount = heartCount.textContent + "❤️"; // Append a heart to the existing content
 
-        heartCount.textContent = loveCount;
+    heartCount.textContent = loveCount;
 
-        // Optionally, you can add some extra spacing/new lines if heartNum < 10
-        if (heartNum < 10) {
-            loveCount = heartCount.textContent + " \n ";
-        }
-    } else {
-        console.log("Maximum number of hearts reached!"); // Optional: Log message when limit is reached
+    // Optionally, you can add some extra spacing/new lines if heartNum < 10
+    if (heartNum < 10) {
+        loveCount = heartCount.textContent + " \n ";
     }
 }
