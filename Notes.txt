@@ -1,0 +1,5 @@
+Absolute position heart SVGs in the background.
+
+Use different heart SVGs when clicking button and in the "us through the years section"
+
+SVGs "freepik.com"
